@@ -9,7 +9,7 @@ This tool can automate and simplify the modification of the Final Fantasy Pixel 
   - Download release from https://github.com/noskill-io/ffpr-tool/releases
   - Place ffpr-tool.exe in root game directory (e.g. C:\Program Files\Steam\steamapps\common\FINAL FANTASY PR\)
   - Run ffpr-tool.exe and follow the prompts
-  - 
+
 ## Planned Features
   - Modify Framerate
   - Modify AutoBattle speed
