@@ -1,0 +1,39 @@
+{
+  "name": "ffpr-tool",
+  "version": "1.0.0",
+  "description": "Final Fantasy Pixel Remaster Tool",
+  "author": "exodus",
+  "license": "ISC",
+  "homepage": "https://github.com/jmroon/ffpr-tool#readme",
+  "bugs": {
+    "url": "https://github.com/jmroon/ffpr-tool/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmroon/ffpr-tool.git"
+  },
+  "main": "app.ts",
+  "bin": "app.js",
+  "scripts": {
+    "build-js": "tsc --build",
+    "build-exe": "pkg .",
+    "build": "yarn build-js && yarn build-exe",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "pkg": {
+    "targets": [
+      "node14-windows-x64"
+    ],
+    "outputPath": "dist/bin"
+  },
+  "devDependencies": {
+    "@types/prompt": "^1.1.1",
+    "pkg": "^5.3.2",
+    "prettier": "^2.4.0",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.3"
+  },
+  "dependencies": {
+    "prompt": "^1.2.0"
+  }
+}

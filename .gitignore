@@ -1,2 +1,4 @@
-/dist/
-/test/
+dist/
+test/
+node_modules/
+.idea
