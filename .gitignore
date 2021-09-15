@@ -2,3 +2,4 @@ dist/
 test/
 node_modules/
 .idea
+GameAssembly.dll
