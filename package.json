@@ -12,8 +12,8 @@
     "type": "git",
     "url": "git+https://github.com/jmroon/ffpr-tool.git"
   },
-  "main": "app.ts",
-  "bin": "app.js",
+  "main": "src/app.ts",
+  "bin": "dist/app.js",
   "scripts": {
     "build-js": "tsc --build",
     "build-exe": "pkg .",
