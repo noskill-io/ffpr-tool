@@ -1,5 +1,5 @@
 import fs from 'fs';
-import prompts, { PromptObject, Options } from 'prompts';
+import prompts, { PromptObject } from 'prompts';
 import { WALK_SPEED_CLASSIC, WALK_SPEED_FAST, WALK_SPEED_ORIGINAL, WalkSpeed } from './ga_constants/speed';
 
 const GA_FILE = 'GameAssembly.dll';
@@ -43,10 +43,10 @@ async function main() {
   const file = fs.readFileSync(`./${GA_FILE}`, 'hex');
 
   try {
-    let patchedFile = replaceSingleOccurence(file, WALK_SPEED_ORIGINAL.base, walkSpeed.base, 'Base Speed');
+    let patchedFile = replaceSingleOccurrence(file, WALK_SPEED_ORIGINAL.base, walkSpeed.base, 'Base Speed');
 
     walkSpeed.lookupTable.forEach((value, index) => {
-      patchedFile = replaceSingleOccurence(
+      patchedFile = replaceSingleOccurrence(
         patchedFile,
         WALK_SPEED_ORIGINAL.lookupTable[index],
         value,
@@ -72,7 +72,7 @@ function backupDll() {
   // todo: append a filename friendly timestamp or increment to the end of the filename so we don't lose the original
 }
 
-function replaceSingleOccurence(file: string, searchValue: string, replaceValue: string, description = 'Value') {
+function replaceSingleOccurrence(file: string, searchValue: string, replaceValue: string, description = 'Value') {
   const matches = file.match(new RegExp(searchValue, 'g'));
   if (!matches || matches.length == 0) {
     throw Error(`${description}: not found. Ensure you are modifying the original GameAssembly.dll`);
@@ -84,7 +84,7 @@ function replaceSingleOccurence(file: string, searchValue: string, replaceValue:
   return file.replace(searchValue, replaceValue);
 }
 
-main().then(async (r) => {
+main().then(async () => {
   await prompts({
     type: 'text',
     name: 'exit',
