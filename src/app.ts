@@ -44,18 +44,19 @@ async function main() {
   const file = fs.readFileSync(`./${GA_FILE}`, 'hex');
 
   try {
-    let patchedFile = replaceSingleOccurrence(file, WALK_SPEED_ORIGINAL.base, walkSpeed.base, 'Base Speed');
+    let patchedFile = replaceSingleOccurrence(file, WALK_SPEED_ORIGINAL.base, walkSpeed.base, true, 'Base Speed');
 
     walkSpeed.lookupTable.forEach((value, index) => {
       patchedFile = replaceSingleOccurrence(
         patchedFile,
         WALK_SPEED_ORIGINAL.lookupTable[index],
         value,
+        false,
         'Lookup Table Speed' // todo: label which speed corresponds to what
       );
     });
 
-    fs.writeFileSync(`./${GA_FILE}`, patchedFile, 'hex');
+    // fs.writeFileSync(`./${GA_FILE}`, patchedFile, 'hex');
 
     console.log('Success!');
   } catch (err: any) {
@@ -73,11 +74,17 @@ function backupDll() {
   // todo: append a filename friendly timestamp or increment to the end of the filename so we don't lose the original
 }
 
-function replaceSingleOccurrence(file: string, searchValue: string, replaceValue: string, description = 'Value') {
+function replaceSingleOccurrence(
+  file: string,
+  searchValue: string,
+  replaceValue: string,
+  requireUnique = false,
+  description = 'Value'
+) {
   const matches = file.match(new RegExp(searchValue, 'g'));
   if (!matches || matches.length == 0) {
     throw Error(`${description}: not found. Ensure you are modifying the original GameAssembly.dll`);
-  } else if (matches.length > 1) {
+  } else if (matches.length > 1 && requireUnique) {
     throw Error(`${description}: multiple matches found. Cannot identify which to replace.`);
   }
 
