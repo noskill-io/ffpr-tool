@@ -9,7 +9,7 @@ export const WALK_SPEED_ORIGINAL: WalkSpeed = {
 };
 
 export const WALK_SPEED_CLASSIC: WalkSpeed = {
-  base: '0ad7a33e', // 0.24
+  base: '0ad7a33e', // 0.32
   lookupTable: [
     'c781a40000004099999a', // 4.80
     'c781a40000009a991940', // 2.40
@@ -19,7 +19,7 @@ export const WALK_SPEED_CLASSIC: WalkSpeed = {
 };
 
 export const WALK_SPEED_FAST: WalkSpeed = {
-  base: '0ad7233e', // 0.24
+  base: '0ad7233e', // 0.16
   lookupTable: [
     'c781a400000066666640', // 3.60
     'c781a40000009a991940', // 2.40

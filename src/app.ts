@@ -56,7 +56,7 @@ async function main() {
       );
     });
 
-    // fs.writeFileSync(`./${GA_FILE}`, patchedFile, 'hex');
+    fs.writeFileSync(`./${GA_FILE}`, patchedFile, 'hex');
 
     console.log('Success!');
   } catch (err: any) {
