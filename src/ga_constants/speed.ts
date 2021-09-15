@@ -1,5 +1,5 @@
 export const WALK_SPEED_ORIGINAL: WalkSpeed = {
-  base: '8fc2753e11111111', // 0.24
+  base: '8fc2753e', // 0.24
   lookupTable: [
     'c781a400000000008040', // 4.00
     'c781a40000009a991940', // 2.40

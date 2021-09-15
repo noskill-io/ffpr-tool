@@ -32,6 +32,7 @@ const QUESTIONS: PromptObject[] = [
 async function main() {
   if (!fs.existsSync(GA_FILE)) {
     console.log("No GameAssembly.dll found. Please ensure you're running this app from the root game directory.");
+    console.log('e.g. C:\\Program Files\\Steam\\steamapps\\common\\FINAL FANTASY PR\\');
     return;
   }
 
