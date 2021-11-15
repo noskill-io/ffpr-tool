@@ -39,8 +39,6 @@ async function main() {
   const response = await prompts(QUESTIONS);
   const walkSpeed = response.speed as WalkSpeed;
 
-  backupDll();
-
   const file = fs.readFileSync(`./${GA_FILE}`, 'hex');
 
   try {
@@ -55,6 +53,8 @@ async function main() {
         'Lookup Table Speed' // todo: label which speed corresponds to what
       );
     });
+
+    backupDll();
 
     fs.writeFileSync(`./${GA_FILE}`, patchedFile, 'hex');
 
