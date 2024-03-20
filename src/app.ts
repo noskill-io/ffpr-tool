@@ -17,12 +17,12 @@ const QUESTIONS: PromptObject[] = [
       },
       {
         title: 'Classic',
-        description: 'The same speed as the original SNES game (60 px/second).',
+        description: 'Similar speed as the original SNES game (64 px/second).',
         value: WALK_SPEED_CLASSIC,
       },
       {
         title: 'Fast',
-        description: '1.5x faster than the Pixel Remaster default speed (120 px/second)',
+        description: 'Faster than the Pixel Remaster default speed (128 px/second)',
         value: WALK_SPEED_FAST,
       },
     ],
