@@ -3,27 +3,27 @@ export const WALK_SPEED_ORIGINAL: WalkSpeed = {
   lookupTable: [
     'c781a400000000008040', // 4.00 (Airship/Sprint)
     'c781a40000009a991940', // 2.40 (Run/Ship)
-    'c781a40000006666e63f', // 1.80 (Chocobo?)
-    'c781a40000009a99993f', // 1.20 (Walkspeed)
+    'c781a40000006666e63f', // 1.80 (Other vehicles e.g. chocobo)
+    'c781a40000009a99993f', // 1.20 (Walkspeed) (Multipliers for FF5/6 start with c783a4 instead of c781a4, need their own separate tools.)
   ],
 };
 
 export const WALK_SPEED_CLASSIC: WalkSpeed = {
-  base: '9a99993e', // 0.3 (64pps) (Runs a bit smoother than before based on testing, else set to 0.32 for true 60pps, bearing in mind there does seem to be grid position snapping)
+  base: '0ad7a33e', // 0.32 (60pps based on 1.2 multiplier)
   lookupTable: [
     'c781a40000009a999940', // 4.80 (Airship/Sprint)
     'c781a40000009a991940', // 2.40 (Run/Ship)
-    'c781a40000006666e63f', // 1.80 (Chocobo?) (This may need to stay at 1.8 instead of 1.2, could have been causing the fucky speeds)
+    'c781a40000006666e63f', // 1.80 (Other vehicles) (This needs to stay at 1.8 instead of 1.2)
     'c781a40000009a99993f', // 1.20 (Walkspeed)
   ],
 };
 
 export const WALK_SPEED_FAST: WalkSpeed = {
-  base: '9a99193e', // 0.15 (128pps) (Runs a bit smoother than before based on testing, else set to 0.16 for true 120pps)
+  base: '0ad7233e', // 0.16 (120pps based on 1.2 multiplier)
   lookupTable: [
     'c781a40000009a999940', // 4.80 (Airship/Sprint)
     'c781a40000009a991940', // 2.40 (Run/Ship)
-    'c781a40000006666e63f', // 1.80 (Chocobo?)
+    'c781a40000006666e63f', // 1.80 (Other vehicles)
     'c781a40000009a99993f', // 1.20 (Walkspeed)
   ],
 };
