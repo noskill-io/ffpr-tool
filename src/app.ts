@@ -17,7 +17,7 @@ const QUESTIONS: PromptObject[] = [
       },
       {
         title: 'Classic',
-        description: 'The same speed as the original SNES game (60 px/second).',
+        description: 'Same speed as the original SNES game (60 px/second).',
         value: WALK_SPEED_CLASSIC,
       },
       {
